@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Heart, Share2, Download, PlayCircle, PauseCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useNavigate } from "react-router-dom"
-import { n } from "node_modules/framer-motion/dist/types.d-B50aGbjN"
 
 interface Song {
   id: string
