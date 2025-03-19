@@ -1,0 +1,672 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\dtos\\musicfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\dtos\\musicfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\extension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\extension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.service\\services\\musicfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|solutionrelative:pictune.service\\services\\musicfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\pictune.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\pictune.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\pictune.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\pictune.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\pictune.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\pictune.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.service\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|solutionrelative:pictune.service\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\controllers\\authcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\controllers\\authcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CEC00C7-472B-4FA4-AC34-661E77432FC1}|Solution Items{3CEC00C7-472B-4FA4-AC34-661E77432FC1}|C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CEC00C7-472B-4FA4-AC34-661E77432FC1}|Solution Items{3CEC00C7-472B-4FA4-AC34-661E77432FC1}|solutionrelative:global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\second year studies\\()\\audio_to_text.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|solutionrelative:pictune.data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\controllers\\musicfilescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\controllers\\musicfilescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|solutionrelative:pictune.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|solutionrelative:pictune.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\dtos\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\dtos\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\iservices\\imusicfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\iservices\\imusicfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.service\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|solutionrelative:pictune.service\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|solutionrelative:pictune.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.service\\services\\s3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA293D32-4EA0-40D8-80D6-B457C12A7190}|PicTune.Service\\PicTune.Service.csproj|solutionrelative:pictune.service\\services\\s3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\models\\musicfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\models\\musicfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.core\\iservices\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5845E925-05B6-4F63-9750-FE8F254E1056}|PicTune.Core\\PicTune.Core.csproj|solutionrelative:pictune.core\\iservices\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.data\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B71F44BD-5D69-40BE-AF21-CD8CED948817}|PicTune.Data\\PicTune.Data.csproj|solutionrelative:pictune.data\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\postmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\postmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|c:\\users\\user1\\desktop\\second year studies\\visutune\\backend-dotnet\\pictune\\pictune.api\\postmodels\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE2FB2B-B6D2-452E-BE11-38E8BCECDAE6}|PicTune.API\\PicTune.API.csproj|solutionrelative:pictune.api\\postmodels\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\Models\\Role.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\Role.cs",
+              "RelativeToolTip": "PicTune.Core\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:17:03.011Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PicTune.API.http",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PicTune.API.http",
+              "RelativeDocumentMoniker": "PicTune.API\\PicTune.API.http",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PicTune.API.http",
+              "RelativeToolTip": "PicTune.API\\PicTune.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-10T16:23:59.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "PicTune.API\\Controllers\\UploadController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:15:10.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Program.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Program.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Program.cs",
+              "RelativeToolTip": "PicTune.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:04:10.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MusicFileService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\MusicFileService.cs",
+              "RelativeDocumentMoniker": "PicTune.Service\\Services\\MusicFileService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\MusicFileService.cs",
+              "RelativeToolTip": "PicTune.Service\\Services\\MusicFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T09:06:32.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MusicFileUploadDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\MusicFileUploadDto.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\DTOs\\MusicFileUploadDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\MusicFileUploadDto.cs",
+              "RelativeToolTip": "PicTune.Core\\DTOs\\MusicFileUploadDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T21:26:43.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\appsettings.json",
+              "RelativeDocumentMoniker": "PicTune.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\appsettings.json",
+              "RelativeToolTip": "PicTune.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T15:59:48.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PicTune.API.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PicTune.API.csproj",
+              "RelativeDocumentMoniker": "PicTune.API\\PicTune.API.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PicTune.API.csproj",
+              "RelativeToolTip": "PicTune.API\\PicTune.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-18T13:25:28.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Extension.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Extension.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Extension.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Extension.cs",
+              "RelativeToolTip": "PicTune.API\\Extension.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:24:47.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MusicFilesController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\MusicFilesController.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Controllers\\MusicFilesController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\MusicFilesController.cs",
+              "RelativeToolTip": "PicTune.API\\Controllers\\MusicFilesController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:34:15.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PicTune.Core.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\PicTune.Core.csproj",
+              "RelativeDocumentMoniker": "PicTune.Core\\PicTune.Core.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\PicTune.Core.csproj",
+              "RelativeToolTip": "PicTune.Core\\PicTune.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-18T23:26:56.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthController .cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\AuthController .cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Controllers\\AuthController .cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\AuthController .cs",
+              "RelativeToolTip": "PicTune.API\\Controllers\\AuthController .cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T22:20:50.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "PicTune.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T18:09:01.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "PicTune.Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\SeedData.cs",
+              "RelativeToolTip": "PicTune.Data\\SeedData.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAxwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T14:54:14.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "PicTune.Service\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\AuthService.cs",
+              "RelativeToolTip": "PicTune.Service\\Services\\AuthService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAWwFMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:18:54.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "PicTune.Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "PicTune.Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvxcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T15:54:47.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\LoginDto.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\DTOs\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\LoginDto.cs",
+              "RelativeToolTip": "PicTune.Core\\DTOs\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T13:43:48.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\global.json",
+              "RelativeDocumentMoniker": "global.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\global.json",
+              "RelativeToolTip": "global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-17T16:32:15.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "PicTune.Data\\ApplicationDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "PicTune.Data\\ApplicationDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:38:11.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "PicTune.API\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:34:30.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Mappers\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\Mappers\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\Mappers\\MappingProfile.cs",
+              "RelativeToolTip": "PicTune.API\\Mappers\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T13:37:44.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\User.cs",
+              "RelativeToolTip": "PicTune.Core\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T10:41:18.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "PicTune.Core\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T13:43:08.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UpdateUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\UpdateUserDto.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\DTOs\\UpdateUserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\UpdateUserDto.cs",
+              "RelativeToolTip": "PicTune.Core\\DTOs\\UpdateUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T14:42:53.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\DTOs\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "PicTune.Core\\DTOs\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T13:43:28.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IMusicFileService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IMusicFileService.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\IServices\\IMusicFileService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IMusicFileService.cs",
+              "RelativeToolTip": "PicTune.Core\\IServices\\IMusicFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T21:06:27.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IUserService.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\IServices\\IUserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IUserService.cs",
+              "RelativeToolTip": "PicTune.Core\\IServices\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T20:29:09.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IAuthService.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\IServices\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IAuthService.cs",
+              "RelativeToolTip": "PicTune.Core\\IServices\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T12:30:44.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\RoleService.cs",
+              "RelativeDocumentMoniker": "PicTune.Service\\Services\\RoleService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\RoleService.cs",
+              "RelativeToolTip": "PicTune.Service\\Services\\RoleService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:10:43.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\Permission.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\Models\\Permission.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\Permission.cs",
+              "RelativeToolTip": "PicTune.Core\\Models\\Permission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T10:38:29.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "PicTune.Service\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\UserService.cs",
+              "RelativeToolTip": "PicTune.Service\\Services\\UserService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T14:58:39.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "S3Service.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\S3Service.cs",
+              "RelativeDocumentMoniker": "PicTune.Service\\Services\\S3Service.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Service\\Services\\S3Service.cs",
+              "RelativeToolTip": "PicTune.Service\\Services\\S3Service.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T00:07:26.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MusicFile.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\MusicFile.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\Models\\MusicFile.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\Models\\MusicFile.cs",
+              "RelativeToolTip": "PicTune.Core\\Models\\MusicFile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAWwA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T23:22:36.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IRoleService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IRoleService.cs",
+              "RelativeDocumentMoniker": "PicTune.Core\\IServices\\IRoleService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Core\\IServices\\IRoleService.cs",
+              "RelativeToolTip": "PicTune.Core\\IServices\\IRoleService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T20:26:08.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\Repositories\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "PicTune.Data\\Repositories\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.Data\\Repositories\\RoleRepository.cs",
+              "RelativeToolTip": "PicTune.Data\\Repositories\\RoleRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwB4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T13:33:38.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "audio_to_text.py",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\()\\audio_to_text.py",
+              "RelativeDocumentMoniker": "..\\..\\..\\()\\audio_to_text.py",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\()\\audio_to_text.py",
+              "RelativeToolTip": "..\\..\\..\\()\\audio_to_text.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-03-12T22:40:39.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PostModels\\LoginModel.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\PostModels\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PostModels\\LoginModel.cs",
+              "RelativeToolTip": "PicTune.API\\PostModels\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:35:45.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PostModels\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "PicTune.API\\PostModels\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\second year studies\\VisuTune\\backend-dotnet\\PicTune\\PicTune.API\\PostModels\\RegisterModel.cs",
+              "RelativeToolTip": "PicTune.API\\PostModels\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T15:36:11.046Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
