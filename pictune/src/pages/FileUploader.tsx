@@ -7,7 +7,6 @@ import FileDropzone from '@/components/FileDropzone';
 import ProgressBar from '@/components/ProgressBar';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
-import axios from 'axios';
 import {  getPresignedUrl, saveFileMetadata, uploadFileToS3 } from '@/services/uploadService';
 export default function FileUploaderPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -34,7 +33,7 @@ export default function FileUploaderPage() {
     try {
       // Step 1: Request a presigned URL from the backend
       const { url, key } = await getPresignedUrl(file.name);
-      console.log(file.type+' type');
+      console.log(key + 'key');
 
       // Step 2: Upload the file directly to S3
       await uploadFileToS3(url,file,setProgress)
