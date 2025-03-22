@@ -4,10 +4,11 @@ WORKDIR /app
 
 # Copy the solution and project files
 COPY *.sln ./
-COPY PicTune.Api/*.csproj PicTune.Api/
-COPY PicTune.Core/*.csproj PicTune.Core/
-COPY PicTune.Data/*.csproj PicTune.Data/
-COPY PicTune.Service/*.csproj PicTune.Service/
+COPY pictune-server/PicTune.Api/*.csproj /app/PicTune.Api/
+COPY pictune-server/PicTune.Core/*.csproj /app/PicTune.Core/
+COPY pictune-server/PicTune.Data/*.csproj /app/PicTune.Data/
+COPY pictune-server/PicTune.Service/*.csproj /app/PicTune.Service/
+
 
 # Restore dependencies
 RUN dotnet restore
