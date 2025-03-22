@@ -29,7 +29,6 @@ RUN dotnet publish "./PicTune.API.csproj" -c $BUILD_CONFIGURATION -o /app/publis
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
-<<<<<<< HEAD
 
 # Copy the solution and project files
 COPY *.sln ./
@@ -53,7 +52,5 @@ WORKDIR /app
 COPY --from=build /app/PicTune.Api/out .
 ENV ASPNETCORE_URLS=http://+:5000
 CMD ["dotnet", "PicTune.Api.dll"]
-=======
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "PicTune.API.dll"]
->>>>>>> 4d130bd (dockerfile)
