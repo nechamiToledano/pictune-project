@@ -1,0 +1,17 @@
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Service.deps.json
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Service.dll
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Service.pdb
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Core.dll
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Data.dll
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Core.pdb
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\bin\Debug\net8.0\PicTune.Data.pdb
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.csproj.AssemblyReference.cache
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.AssemblyInfoInputs.cache
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.AssemblyInfo.cs
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.csproj.CoreCompileInputs.cache
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune..DA3189BA.Up2Date
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.dll
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\refint\PicTune.Service.dll
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\PicTune.Service.pdb
+C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Service\obj\Debug\net8.0\ref\PicTune.Service.dll
