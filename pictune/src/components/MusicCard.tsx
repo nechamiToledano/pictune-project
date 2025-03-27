@@ -18,8 +18,10 @@ interface MusicCardProps {
 
 export default function MusicCard({ song, index, isPlaying, onPlayPause }: MusicCardProps) {
   const [isHovered, setIsHovered] = useState(false)
-
+  console.log(isHovered);
   return (
+  
+    
     <motion.div
       className="relative rounded-xl overflow-hidden h-full group"
       onMouseEnter={() => setIsHovered(true)}

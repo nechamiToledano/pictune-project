@@ -67,13 +67,7 @@ export default function PlaylistView({ onPlaySong, currentlyPlayingSong }: Playl
     dispatch(setCurrentPlaylist(null))
   }
   
-  const formatDuration = (seconds: number) => {
-    if (isNaN(seconds)) return "0:00"
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = Math.floor(seconds % 60)
-    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
-  }
-  
+
   return (
     <div className="bg-black/30 backdrop-blur-md rounded-xl border border-gray-800 p-4 mb-8">
       <div className="flex items-start gap-6 mb-6">

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import { Loader2, Music } from "lucide-react"
+import { Loader2 } from "lucide-react"
 import { fetchSongLyrics } from "@/store/slices/musicFilesSlice"
 import type { AppDispatch, RootState } from "@/store/store"
 

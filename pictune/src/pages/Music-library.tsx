@@ -16,7 +16,7 @@ import { selectCurrentPlaylist, selectPlaylistWithSongs } from "@/store/slices/p
 import Background from "./Background"
 
 export default function MusicLibrary() {
-  const { files: songs, loading, error } = useSelector((state: RootState) => state.musicFiles)
+  const { files: songs } = useSelector((state: RootState) => state.musicFiles)
   const currentPlaylist = useSelector(selectCurrentPlaylist)
   const [playingSong, setPlayingSong] = useState<MusicFile | null>(null)
   const [searchQuery, setSearchQuery] = useState("")

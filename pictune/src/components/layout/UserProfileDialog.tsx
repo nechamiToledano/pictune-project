@@ -68,7 +68,7 @@ export default function UserProfileDialog() {
     .map((name) => name[0])
     .join("")
     .toUpperCase()
-
+    console.log(loading);
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import { Music,  ChevronLeft, ChevronRight, Search } from "lucide-react"
+import { Music,  Search } from "lucide-react"
 import {
   Pagination,
   PaginationContent,
@@ -210,7 +210,7 @@ export default function AllMusic() {
                       className={
                         currentPage === 1 ? "text-gray-600 cursor-not-allowed" : "text-white hover:bg-white/10"
                       }
-                      icon={<ChevronLeft className="h-4 w-4" />}
+                      
                     />
                   </PaginationItem>
                   {Array.from({ length: totalPages }).map((_, index) => (
@@ -234,7 +234,6 @@ export default function AllMusic() {
                       className={
                         currentPage === totalPages ? "text-gray-600 cursor-not-allowed" : "text-white hover:bg-white/10"
                       }
-                      icon={<ChevronRight className="h-4 w-4" />}
                     />
                   </PaginationItem>
                 </PaginationContent>
