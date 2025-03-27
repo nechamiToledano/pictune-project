@@ -149,7 +149,7 @@ interface AuthHeroSectionProps {
                   <TabsList className="grid grid-cols-2 w-full rounded-none bg-black/30">
                     <TabsTrigger
                       value="signin"
-                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-red-600/20 data-[state=active]:to-blue-600/20 rounded-none border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-gradient-to-r data-[state=active]:from-red-400 data-[state=active]:to-blue-400 transition-all text-white"
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-red-700 data-[state=active]:to-blue-700 rounded-none border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-gradient-to-r data-[state=active]:from-red-400 data-[state=active]:to-blue-400 transition-all text-white"
                     >
                       Sign In
                     </TabsTrigger>
@@ -258,7 +258,7 @@ interface AuthHeroSectionProps {
                       <CardFooter className="flex flex-col p-6 pt-0 gap-4">
                         <Button
                           type="submit"
-                          className="w-full py-6 transition-all bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
+                          className="w-full py-6 transition-all bg-gradient-to-r from-red-700/50 to-blue-700/50 hover:from-red-700 hover:to-blue-700 text-white"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? (
