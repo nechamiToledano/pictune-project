@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PicTune.Core.Models;
+using PicTune.Data.Models;
 
 namespace PicTune.Data
 {
@@ -9,6 +10,8 @@ namespace PicTune.Data
     {
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<MusicFile> MusicFiles { get; set; }
+        public DbSet<Playlist> Playlists { get; internal set; }
+        public DbSet<Folder> Folders { get; internal set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 

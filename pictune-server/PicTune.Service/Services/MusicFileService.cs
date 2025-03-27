@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using PicTune.Core.IRepositories;
 using PicTune.Core.IServices;
 using PicTune.Core.Models;
-using PicTune.Data;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PicTune.Service
@@ -12,83 +10,75 @@ namespace PicTune.Service
     public class MusicFileService : IMusicFileService
     {
         private readonly UserManager<User> _userManager;
-        private readonly ApplicationDbContext _context;
+        private readonly IMusicFileRepository _repository;
 
-        public MusicFileService(UserManager<User> userManager, ApplicationDbContext context)
+        public MusicFileService(UserManager<User> userManager, IMusicFileRepository repository)
         {
             _userManager = userManager;
-            _context = context;
+            _repository = repository;
         }
 
-        // Get all music files (with an option to apply filters in the future)
-        public async Task<IEnumerable<MusicFile>> GetAllMusicFilesAsync()
-        {
-            return await _context.MusicFiles.Where(f => !f.IsDeleted).ToListAsync(); // Exclude deleted files
-        }
-
-        // Get a specific music file by ID
         public async Task<MusicFile?> GetMusicFileByIdAsync(int id)
         {
-            return await _context.MusicFiles.FindAsync(id); // Use FindAsync to retrieve by ID directly
+            return await _repository.GetByIdAsync(id);
         }
 
-        // Add a new music file and assign "Editor" role to the uploader
         public async Task<MusicFile?> AddMusicFileAsync(MusicFile musicFile, string userName)
-      
         {
             var user = await _userManager.FindByNameAsync(userName);
-
             if (user == null) return null;
 
-            // Assign the user the "Editor" role if they don't have it
             if (!(await _userManager.IsInRoleAsync(user, "Editor")))
             {
                 await _userManager.AddToRoleAsync(user, "Editor");
             }
 
-            // Save the new music file to the database
-            musicFile.OwnerId = user.Id; // Associate the file with the user's ID
-            _context.MusicFiles.Add(musicFile);
-            var result = await _context.SaveChangesAsync();
-
-            if (result > 0)
-            {
-                return musicFile; // Successfully added the music file
-            }
-
-            return null; // Failed to add the music file
+            musicFile.OwnerId = user.Id;
+            await _repository.AddAsync(musicFile);
+            return musicFile;
         }
 
-        // Delete a music file if the user is an Admin or Editor
         public async Task<bool> DeleteMusicFileAsync(int id, string userId)
         {
-            var file = await _context.MusicFiles.FindAsync(id);
+            var file = await _repository.GetByIdAsync(id);
             if (file == null) return false;
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null || !(await _userManager.IsInRoleAsync(user, "Editor") || await _userManager.IsInRoleAsync(user, "Admin")))
                 return false;
 
-            // Mark the file as deleted (soft delete)
             file.IsDeleted = true;
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(file);
             return true;
         }
 
-        // Update a music file's details if the user is an Admin or Editor
         public async Task<bool> UpdateMusicFileAsync(int id, string newFileName, string userId)
         {
-            var file = await _context.MusicFiles.FindAsync(id);
+            var file = await _repository.GetByIdAsync(id);
             if (file == null) return false;
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null || !(await _userManager.IsInRoleAsync(user, "Editor") || await _userManager.IsInRoleAsync(user, "Admin")))
                 return false;
 
-            // Update file metadata
             file.FileName = newFileName;
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(file);
             return true;
+        }
+
+        public async Task<bool> ToggleLikeAsync(int id, string userId)
+        {
+            var file = await _repository.GetByIdAsync(id);
+            if (file == null) return false;
+
+            file.IsLiked = !file.IsLiked;
+            await _repository.UpdateAsync(file);
+            return true;
+        }
+
+        public async Task<IEnumerable<MusicFile>> GetAllMusicFilesAsync(string? userId, bool? favorites)
+        {
+            return await _repository.GetAllMusicFilesAsync(userId, favorites);
         }
     }
 }

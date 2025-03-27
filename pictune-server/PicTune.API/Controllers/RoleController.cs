@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using PicTune.Service;
 using Microsoft.AspNetCore.Authorization;
+using PicTune.Core.IServices;
 
 [Authorize("AdminOnly")]
 [Route("api/roles")]

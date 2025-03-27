@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-using System.IO;
+using DotNetEnv;
+using PicTune.Core.IServices;
 
 namespace PicTune.Data
 {
@@ -9,15 +9,27 @@ namespace PicTune.Data
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            // Manually set path to appsettings.json in PicTune.API
+            // Load environment variables from .env
             var basePath = Path.Combine(Directory.GetCurrentDirectory(), "../PicTune.API");
+            var envPath = Path.Combine(basePath, ".env");
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(basePath)  // Explicitly point to API project
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+            if (File.Exists(envPath))
+            {
 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+                Env.Load(envPath);
+            }
+            else
+            {
+                throw new FileNotFoundException($".env file not found at {envPath}");
+            }
+
+            // Get connection string from environment variables
+            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("DB_CONNECTION is not set in .env file");
+            }
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));

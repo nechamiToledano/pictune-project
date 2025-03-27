@@ -38,7 +38,7 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="relative z-10">
               <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 h-full flex flex-col items-center text-center relative">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-red-600 to-blue-600 flex items-center justify-center text-white font-bold">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-red-600/20 to-blue-600/20 flex items-center justify-center text-white font-bold">
                   {step.step}
                 </div>
                 <div className="pt-8">
@@ -51,7 +51,7 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Button className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
+          <Button className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
             Try It Now
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

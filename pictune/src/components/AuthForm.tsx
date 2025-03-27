@@ -258,7 +258,7 @@ interface AuthHeroSectionProps {
                       <CardFooter className="flex flex-col p-6 pt-0 gap-4">
                         <Button
                           type="submit"
-                          className="w-full py-6 transition-all bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white"
+                          className="w-full py-6 transition-all bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? (
@@ -475,7 +475,7 @@ interface AuthHeroSectionProps {
                       <CardFooter className="flex flex-col p-6 pt-0 gap-4">
                         <Button
                           type="submit"
-                          className="w-full py-6 transition-all bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white"
+                          className="w-full py-6 transition-all bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? (

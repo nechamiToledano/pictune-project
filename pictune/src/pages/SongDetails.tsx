@@ -1,257 +1,281 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import type React from "react"
+
+import { useEffect, useState, useRef } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router-dom"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Heart, Share2, Download, PlayCircle, PauseCircle } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useNavigate } from "react-router-dom"
+import { ArrowLeft, Download } from "lucide-react"
+import { fetchMusicFileById, fetchMusicFileUrl } from "@/store/slices/musicFilesSlice"
+import type { AppDispatch, RootState } from "@/store/store"
+import Background from "./Background"
+import SongArtwork from "@/components/SongArtwork"
+import SongActions from "@/components/SongActions"
+import SongInfo from "@/components/SongInfo"
+import AddToPlaylistDialog from "@/components/Add-to-playlist-dialog"
 
-interface Song {
-  id: string
-  title: string
-  url: string
-  artist?: string
-  lyrics?: string
-  releaseDate?: string
-  duration?: string
-}
-
-interface SongDetailsProps {
-  id: string
-}
-
-export default function SongDetails({ id }: SongDetailsProps) {
-  const navigate = useNavigate();
-
-  const [song, setSong] = useState<Song | null>(null)
+export default function SongDetails() {
+  const { id } = useParams<{ id: string }>()
+  const dispatch = useDispatch<AppDispatch>()
+  const navigate = useNavigate()
+  const { selectedFile: song, songUrl, loading, error } = useSelector((state: RootState) => state.musicFiles)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(null)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const progressRef = useRef<HTMLDivElement>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
-    // Demo songs data - replace with API call
-    const songs: Song[] = [
-      {
-        id: "1",
-        title: "First Song",
-        artist: "Artist One",
-        url: "/a.mp3",
-        lyrics:
-          "Here are the lyrics for the first song...\nSecond line of lyrics\nThird line of lyrics\n\nChorus:\nThis is the chorus of the song\nAnother line in the chorus",
-        releaseDate: "01/01/2023",
-        duration: "3:45",
-      },
-      {
-        id: "2",
-        title: "Second Song",
-        artist: "Artist Two",
-        url: "/a.mp3",
-        lyrics:
-          "Lyrics for the second song...\nAnother line of lyrics\nYet another line\n\nChorus:\nChorus of the second song\nMore chorus",
-        releaseDate: "15/03/2023",
-        duration: "4:12",
-      },
-      {
-        id: "3",
-        title: "Third Song",
-        artist: "Artist Three",
-        url: "/a.mp3",
-        lyrics:
-          "Lyrics for the third song...\nAnother line\nOne more line\n\nChorus:\nThis is the chorus\nEnd of chorus",
-        releaseDate: "22/05/2023",
-        duration: "3:28",
-      },
-      {
-        id: "4",
-        title: "Fourth Song",
-        artist: "Artist Four",
-        url: "/a.mp3",
-        lyrics: "Lyrics for the fourth song...\nMore lyrics\nAdditional lyrics\n\nChorus:\nSong chorus\nEnd",
-        releaseDate: "10/07/2023",
-        duration: "5:01",
-      },
-      {
-        id: "5",
-        title: "Fifth Song",
-        artist: "Artist Five",
-        url: "/a.mp3",
-        lyrics: "Lyrics for the fifth song...\nAnother line\nAdditional line\n\nChorus:\nFifth chorus\nEnd of chorus",
-        releaseDate: "05/09/2023",
-        duration: "4:35",
-      },
-    ]
-
-    const selectedSong = songs.find((s) => s.id === id)
-    if (selectedSong) {
-      setSong(selectedSong)
-    } else {
-      navigate(`/dashboarsongs/:${id}`)  
-      }
-  }, [id, navigate]);
+    if (id) {
+      dispatch(fetchMusicFileById(Number(id)))
+      dispatch(fetchMusicFileUrl(Number(id))) // Fetch S3 pre-signed URL
+    }
+  }, [id, dispatch])
 
   useEffect(() => {
-    // Initialize audio element
-    if (song) {
-      const audio = new Audio(song.url)
-      setAudioElement(audio)
+    if (songUrl) {
+      const audio = new Audio(songUrl)
+      audioRef.current = audio
 
-      // Add event listeners
-      audio.addEventListener("ended", () => setIsPlaying(false))
+      audio.addEventListener("timeupdate", updateProgress)
+      audio.addEventListener("loadedmetadata", () => {
+        setDuration(audio.duration)
+      })
+      audio.addEventListener("ended", () => {
+        setIsPlaying(false)
+        setCurrentTime(0)
+      })
 
-      // Cleanup
       return () => {
         audio.pause()
-        audio.removeEventListener("ended", () => setIsPlaying(false))
+        audio.removeEventListener("timeupdate", updateProgress)
+        audio.removeEventListener("loadedmetadata", () => {})
+        audio.removeEventListener("ended", () => {})
       }
     }
-  }, [song])
+  }, [songUrl])
 
-  const togglePlay = () => {
-    if (!audioElement) return
-
-    if (isPlaying) {
-      audioElement.pause()
-    } else {
-      audioElement.play()
+  const updateProgress = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime)
     }
-
-    setIsPlaying(!isPlaying)
   }
 
-  if (!song) {
+  const formatTime = (time: number) => {
+    if (isNaN(time)) return "0:00"
+
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`
+  }
+
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!audioRef.current || !progressRef.current) return
+
+    const rect = progressRef.current.getBoundingClientRect()
+    const pos = (e.clientX - rect.left) / rect.width
+
+    audioRef.current.currentTime = pos * audioRef.current.duration
+    setCurrentTime(audioRef.current.currentTime)
+  }
+
+  const downloadSong = () => {
+    if (!song) return
+
+    // Create a temporary anchor element
+    const a = document.createElement("a")
+    a.href = song.s3Key
+    a.download = song.fileName
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+  }
+
+  if (loading)
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="h-32 w-32 bg-gray-700 rounded-full mb-4"></div>
-          <div className="h-6 w-48 bg-gray-700 rounded mb-2"></div>
-          <div className="h-4 w-32 bg-gray-700 rounded"></div>
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <div className="text-white text-xl flex items-center gap-3">
+          <div className="animate-spin">
+            <svg className="h-8 w-8 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </div>
+          Loading song details...
         </div>
       </div>
     )
-  }
 
-  return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Background gradient */}
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br opacity-90",
-          Number(id) % 2 === 0 ? "from-red-600 via-purple-600 to-blue-600" : "from-blue-600 via-purple-600 to-red-600",
-        )}
-      />
-
-      {/* Overlay pattern */}
-      <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100&text=+')] bg-repeat opacity-5"></div>
-
-      {/* Content overlay */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
-
-      {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 py-8 flex flex-col min-h-screen">
-        {/* Header with back button */}
-        <div className="mb-8">
+  if (error)
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl max-w-md text-center border border-gray-800">
+          <div className="text-red-400 mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mx-auto"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-white mb-2">Error Loading Song</h2>
+          <p className="text-gray-400">{error}</p>
           <Button
-            variant="ghost"
-            onClick={() => navigate(`/dashboarsongs/:${id}`)}
-            className="text-white hover:text-white hover:bg-white/20 gap-2"
+            onClick={() => navigate("/songs")}
+            className="mt-4 bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
           >
-            <ArrowLeft className="h-5 w-5" />
-            Back to Music List
+            Back to Music
           </Button>
         </div>
+      </div>
+    )
 
-        {/* Main song content */}
-        <div className="flex-1 flex flex-col md:flex-row gap-8 items-center md:items-start">
-          {/* Album art and player */}
-          <div className="w-full md:w-1/2 max-w-md">
-            <div className="aspect-square relative rounded-xl overflow-hidden bg-black/30 backdrop-blur-md shadow-2xl mb-6">
-              <img
-                src={`/placeholder.svg?height=600&width=600&text=🎵`}
-                alt={song.title}
-                width={600}
-                height={600}
-                className="object-cover"
+  if (!song)
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl max-w-md text-center border border-gray-800">
+          <div className="text-yellow-400 mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mx-auto"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                clipRule="evenodd"
               />
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={togglePlay}
-                  className="rounded-full w-24 h-24 bg-black/50 backdrop-blur-md text-white hover:scale-105 transition-all hover:bg-gradient-to-r hover:from-red-600 hover:to-blue-600 hover:text-white"
-                >
-                  {isPlaying ? <PauseCircle className="h-16 w-16" /> : <PlayCircle className="h-16 w-16" />}
-                </Button>
-              </div>
-            </div>
-
-            {/* Audio controls */}
-            <div className="bg-black/30 backdrop-blur-md rounded-xl p-4 mb-6">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-white/80 text-sm">00:00</span>
-                <span className="text-white/80 text-sm">{song.duration}</span>
-              </div>
-
-              <div className="h-1.5 bg-white/20 rounded-full mb-4 relative overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-red-500 to-blue-500 w-1/3 rounded-full"></div>
-              </div>
-
-              <div className="flex justify-center gap-4">
-                <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/20">
-                  <Heart className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/20">
-                  <Share2 className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/20">
-                  <Download className="h-5 w-5" />
-                </Button>
-              </div>
-
-              {/* Hidden audio element for browser compatibility */}
-              <audio className="hidden" controls>
-                <source src={song.url} type="audio/mpeg" />
-                Your browser does not support audio playback.
-              </audio>
-            </div>
+            </svg>
           </div>
+          <h2 className="text-xl font-bold text-white mb-2">Song Not Found</h2>
+          <p className="text-gray-400">The song you're looking for could not be found.</p>
+          <Button
+            onClick={() => navigate("/dashboard/songs")}
+            className="mt-4 bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
+          >
+            Back to Music
+          </Button>
+        </div>
+      </div>
+    )
 
-          {/* Song details */}
-          <div className="w-full md:w-1/2 text-white">
-            <h1 className="text-4xl font-bold mb-2">{song.title}</h1>
-            <h2 className="text-2xl text-white/90 mb-6">{song.artist}</h2>
+  return (
+    <section className="relative min-h-screen overflow-hidden">
+      <Background />
 
-            <div className="flex gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg px-4 py-2">
-                <div className="text-sm text-white/70">Date</div>
-                <div>{song.releaseDate}</div>
+      <div className="relative z-10 container mx-auto px-4 py-8 flex flex-col min-h-screen">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/dashboard/songs")}
+            className="mb-6 text-white hover:text-white hover:bg-white/20 self-start"
+          >
+            <ArrowLeft className="h-5 w-5 mr-2" /> Back to Music
+          </Button>
+
+          <div className="flex-1 flex flex-col md:flex-row gap-8 items-center md:items-start">
+            {/* Left Column - Artwork and Controls */}
+            <div className="w-full md:w-1/2 max-w-md">
+              <SongArtwork song={song} isPlaying={isPlaying} setIsPlaying={setIsPlaying} songUrl={songUrl} />
+
+              <div className="bg-black/30 backdrop-blur-md rounded-xl p-4 mb-6 border border-gray-800">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white/80 text-sm">{formatTime(currentTime)}</span>
+                  <span className="text-white/80 text-sm">{formatTime(duration)}</span>
+                </div>
+
+                <div
+                  ref={progressRef}
+                  className="h-1.5 bg-gray-800 rounded-full mb-4 relative cursor-pointer"
+                  onClick={handleProgressClick}
+                >
+                  <div
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-full"
+                    style={{ width: `${(currentTime / duration) * 100 || 0}%` }}
+                  ></div>
+                </div>
+
+                <div className="flex justify-center gap-4">
+                  <SongActions song={song} />
+                  <AddToPlaylistDialog
+                    song={song}
+                    trigger={
+                      <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/20">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                        >
+                          <path d="M12 5v14M5 12h14"></path>
+                        </svg>
+                      </Button>
+                    }
+                  />
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg px-4 py-2">
-                <div className="text-sm text-white/70">Duration</div>
-                <div>{song.duration}</div>
-              </div>
+
+              <SongInfo song={song} />
             </div>
 
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-3">Lyrics</h3>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 whitespace-pre-line leading-relaxed">
-                {song.lyrics}
-              </div>
-            </div>
+            {/* Right Column - Details and Lyrics */}
+            <div className="w-full md:w-1/2 text-white">
+              <h1 className="text-4xl font-bold mb-2">{song.fileName}</h1>
+              <p className="text-white/70 mb-6">Enjoy your music with our enhanced audio player</p>
 
-            <div className="mt-auto">
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold mb-3">About This Track</h3>
+                <div className="bg-black/30 backdrop-blur-md rounded-lg p-6 mb-6 border border-gray-800">
+                  <p className="leading-relaxed">
+                    This is your music file. You can play, download, or share it with others. The player allows you to
+                    control playback and navigate through the track.
+                  </p>
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3">Lyrics</h3>
+                <div className="bg-black/30 backdrop-blur-md rounded-lg p-6 whitespace-pre-line leading-relaxed h-64 overflow-y-auto border border-gray-800">
+                  <p className="text-center text-white/50 italic">No lyrics available for this track.</p>
+                </div>
+              </div>
+
               <Button
-                className="w-full bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white backdrop-blur-sm"
+                className="w-full bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white backdrop-blur-sm"
                 size="lg"
+                onClick={downloadSong}
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Song
+                <Download className="mr-2 h-5 w-5" /> Download Song
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 
+// Helper function to format file size
+function formatFileSize(bytes: number) {
+  if (bytes < 1024) return bytes + " B"
+  else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB"
+  else return (bytes / 1048576).toFixed(1) + " MB"
+}
 

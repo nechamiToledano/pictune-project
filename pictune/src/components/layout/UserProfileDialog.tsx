@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { User, LogOut, Settings, Camera, Music, Upload } from "lucide-react"
@@ -13,30 +13,44 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { useNavigate } from "react-router-dom"
+import { fetchUserProfile } from "@/store/slices/userSlice"
+import { AppDispatch, RootState } from "@/store/store"
+import { useDispatch, useSelector } from "react-redux"
 
-interface UserProfileDialogProps {
-  userName?: string
-  userEmail?: string
-  userImage?: string
-  onLogout?: () => void
-}
-
-export default function UserProfileDialog({
-  userName = "John Doe",
-  userEmail = "john.doe@example.com",
-  userImage = "/placeholder.svg?height=96&width=96",
-  onLogout,
-}: UserProfileDialogProps) {
-const navigate=useNavigate();
+export default function UserProfileDialog() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const dispatch = useDispatch<AppDispatch>()
+  const user = useSelector((state: RootState) => state.user) // Fetch user from store
+  const [loading, setLoading] = useState(true) // Track loading state of user profile
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        await dispatch(fetchUserProfile()).unwrap()
+      } catch (error) {
+        console.error("Error fetching user profile:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    const token = localStorage.getItem("token")
+    setIsLoggedIn(!!token)
+
+    if (isLoggedIn) {
+      fetchUser()
+    } else {
+      setLoading(false)
+    }
+  }, [dispatch, isLoggedIn])
 
   const handleLogout = () => {
-    if (onLogout) {
-      onLogout()
-    } else {
-      // Default logout behavior
-      navigate("/")
-    }
+    // Clear localStorage and reset any necessary state
+    localStorage.removeItem("token")
+    dispatch({ type: "user/logout" }) // Replace with actual action if needed
+    navigate("/")
     setOpen(false)
   }
 
@@ -44,6 +58,10 @@ const navigate=useNavigate();
     navigate(path)
     setOpen(false)
   }
+
+  const userName = user?.userName || "User"
+  const userEmail = user?.email || "email@example.com"
+  const userImage =  "" // Adjust if you have user image URL
 
   const userInitials = userName
     .split(" ")
@@ -55,16 +73,16 @@ const navigate=useNavigate();
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8 border border-gray-800">
+          <Avatar className="h-12 w-12 border border-gray-800">
             <AvatarImage src={userImage} alt={userName} />
-            <AvatarFallback className="bg-gradient-to-r from-red-600 to-blue-600 text-white">
+            <AvatarFallback className="bg-gradient-to-r from-red-600/20 to-blue-600/20 text-white">
               {userInitials}
             </AvatarFallback>
           </Avatar>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md bg-black/90 backdrop-blur-md text-white border-gray-800 shadow-xl">
-        <div className="h-1 w-full bg-gradient-to-r from-red-600 to-blue-600 -mt-6 mb-4 mx-auto"></div>
+        <div className="h-1 w-full bg-gradient-to-r from-red-600/20 to-blue-600/20 -mt-6 mb-4 mx-auto"></div>
         <DialogHeader>
           <DialogTitle className="text-xl">User Profile</DialogTitle>
           <DialogDescription className="text-gray-400">Manage your account settings and preferences</DialogDescription>
@@ -73,7 +91,7 @@ const navigate=useNavigate();
           <div className="relative group">
             <Avatar className="h-24 w-24 mb-4 border-4 border-black/40 shadow-xl">
               <AvatarImage src={userImage} alt={userName} />
-              <AvatarFallback className="bg-gradient-to-r from-red-600 to-blue-600 text-white text-2xl">
+              <AvatarFallback className="bg-gradient-to-r from-red-600/20 to-blue-600/20 text-white text-2xl">
                 {userInitials}
               </AvatarFallback>
             </Avatar>
@@ -133,4 +151,3 @@ const navigate=useNavigate();
     </Dialog>
   )
 }
-

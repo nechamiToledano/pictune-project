@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Data\\PicTune.Data.csproj": {}
+    "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Data\\PicTune.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\PicTune.Core.csproj": {
+    "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\PicTune.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\PicTune.Core.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\PicTune.Core.csproj",
         "projectName": "PicTune.Core",
-        "projectPath": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\PicTune.Core.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\PicTune.Core.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Data\\PicTune.Data.csproj": {
+    "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Data\\PicTune.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Data\\PicTune.Data.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Data\\PicTune.Data.csproj",
         "projectName": "PicTune.Data",
-        "projectPath": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Data\\PicTune.Data.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Data\\PicTune.Data.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Data\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\PicTune.Core.csproj": {
-                "projectPath": "C:\\Users\\user1\\Downloads\\pictune-pictune-server\\pictune-pictune-server\\pictune-server\\PicTune.Core\\PicTune.Core.csproj"
+              "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\PicTune.Core.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\second year studies\\pictune\\pictune-server\\PicTune.Core\\PicTune.Core.csproj"
               }
             }
           }
@@ -127,6 +127,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

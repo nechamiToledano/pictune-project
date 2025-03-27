@@ -1,7 +1,7 @@
 import api from "@/components/Api";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-interface UserState {
+export interface UserState {
   userName: string;
   email: string;
   loading: boolean;
@@ -21,7 +21,7 @@ export const fetchUserProfile = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get("/auth/profile");
-      return response.data;
+      return response.data as UserState;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
     }

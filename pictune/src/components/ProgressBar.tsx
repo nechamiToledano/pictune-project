@@ -32,7 +32,7 @@ export default function ProgressBar({ progress, className }: ProgressBarProps) {
   return (
     <div className={cn("relative w-full h-2 bg-gray-800 rounded-full overflow-hidden", className)}>
       <div
-        className="h-full bg-gradient-to-r from-red-600 to-blue-600 transition-all duration-300 ease-out"
+        className="h-full bg-gradient-to-r from-red-600/20 to-blue-600/20 transition-all duration-300 ease-out"
         style={{ width: `${animatedProgress}%` }}
       />
       <div

@@ -10,13 +10,14 @@ using Microsoft.AspNetCore.Identity;
 using System.Text.Json.Serialization;
 using PicTune.API;
 using DotNetEnv;
-DotNetEnv.Env.Load();
-Console.WriteLine($"DB_CONNECTION_STRING: {Env.GetString("JWT_KEY")}");
+using Microsoft.AspNetCore.Hosting.Server;
+using System.Runtime.InteropServices;
+Env.Load();
 
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
-string connectionString = Env.GetString("DB_CONNECTION_STRING");
+string connectionString = Env.GetString ( "DB_CONNECTION_STRING" ) ;
 
 // Register AWS services
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());

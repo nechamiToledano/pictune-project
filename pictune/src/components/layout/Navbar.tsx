@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import {  ChevronDown, Music, User, Info, Phone, Home } from "lucide-react"
+import { ChevronDown, Music, User, Home, Menu } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,18 +11,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
-import UserProfileDialog from './UserProfileDialog'
+import UserProfileDialog from "./UserProfileDialog"
 import { Link } from "react-router-dom"
-import {Avatar, AvatarImage } from "../ui/avatar"
+import { Avatar, AvatarImage } from "../ui/avatar"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+
   useEffect(() => {
+   
+
     const token = localStorage.getItem("token")
     setIsLoggedIn(!!token)
-
-    const handleScroll = () => {
+  const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true)
       } else {
@@ -32,114 +36,40 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [ isLoggedIn])
 
-
+  
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full text-white z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"
+        isScrolled
+          ? "bg-white-100  backdrop-blur-md py-3 shadow-lg border-b "
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo and Title */}
-        <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3">
           <Link to="/">
-           
-            <Avatar  className="relative w-12 h-12  rounded-lg overflow-hidden flex items-center justify-center">
-                <AvatarImage src="/logo.png"></AvatarImage>
-              </Avatar>             
-          
+            <Avatar className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+              <AvatarImage src="/logo.png" />
+            </Avatar>
           </Link>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-blue-400">
-              Pictune
-            </span>
+            PicTune
+          </span>
         </div>
 
-
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex items-center space-x-4">
-          <Link to="/" className="flex items-center gap-1 hover:text-primary transition-colors">
-            <Home size={18} />
-            <span>Home</span>
-          </Link>
-
-          {/* About Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="flex items-center gap-1 text-white hover:text-primary hover:bg-gray-800 px-3 py-2"
-              >
-                <Info size={18} />
-                <span>About</span>
-                <ChevronDown size={16} />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-gray-800 border-gray-700 text-white">
-              <DropdownMenuGroup>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/about" className="flex w-full">
-                    Our Story
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/team" className="flex w-full">
-                    Our Team
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/mission" className="flex w-full">
-                    Our Mission
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {/* Services Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="flex items-center gap-1 text-white hover:text-primary hover:bg-gray-800 px-3 py-2"
-              >
-                <Music size={18} />
-                <span>Services</span>
-                <ChevronDown size={16} />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-gray-800 border-gray-700 text-white">
-              <DropdownMenuGroup>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/services/music-generation" className="flex w-full">
-                    Music Generation
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/services/image-to-music" className="flex w-full">
-                   Music to  Image
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                  <Link to="/services/text-to-music" className="flex w-full">
-                     Music to Text
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator className="bg-gray-700" />
-              <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                <Link to="/pricing" className="flex w-full">
-                  Pricing
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <Link to="/contact" className="flex items-center gap-1 hover:text-primary transition-colors">
-            <Phone size={18} />
-            <span>Contact</span>
+        <div className="hidden md:flex items-center space-x-2">
+          <Link to="/">
+            <Button
+              variant="ghost"
+              className="rounded-full px-4 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            >
+              <Home size={18} className="mr-2" />
+              Home
+            </Button>
           </Link>
 
           {isLoggedIn ? (
@@ -149,40 +79,55 @@ const Navbar = () => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="flex items-center gap-1 text-white hover:text-primary hover:bg-gray-800 px-3 py-2"
+                    className="rounded-full px-4 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
                   >
-                    <Music size={18} />
-                    <span>Music</span>
-                    <ChevronDown size={16} />
+                    <Music size={18} className="mr-2" />
+                    Music
+                    <ChevronDown size={16} className="ml-2 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 bg-gray-800 border-gray-700 text-white">
+                <DropdownMenuContent className="w-56 bg-black/80 backdrop-blur-md border border-white/10 rounded-xl shadow-xl shadow-black/20 text-white mt-2 p-1">
                   <DropdownMenuGroup>
-                    <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                      <Link to="/all-music" className="flex w-full">
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to="/songs" className="flex w-full py-1">
                         All Music
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                      <Link to="/my-music" className="flex w-full">
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to={`/songs?owner=true`} className="flex w-full py-1">
                         My Music
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                      <Link to="/favorites" className="flex w-full">
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to={`/songs?owner=true&favorites=true`} className="flex w-full py-1">
                         Favorites
                       </Link>
                     </DropdownMenuItem>
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to="/playlists" className="flex w-full py-1">
+                        Playlists
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuGroup>
-                  <DropdownMenuSeparator className="bg-gray-700" />
-                  <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                    <Link to="/create" className="flex w-full">
+                  <DropdownMenuSeparator className="bg-white/10 my-1" />
+                  <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                    <Link to="/upload" className="flex w-full py-1">
                       Upload New
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <UserProfileDialog />
+
+             
+
+              <Button className="ml-2 bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:bg-gradient-to-r from-red-600/20 to-blue-600/20 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-0">
+                <Link to="/upload" className="flex items-center">
+                  Upload
+                </Link>
+              </Button>
+              <div className="ml-5 mr-5">
+                <UserProfileDialog />
+              </div>
             </>
           ) : (
             <>
@@ -191,31 +136,138 @@ const Navbar = () => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="flex items-center gap-1 text-white hover:text-primary hover:bg-gray-800 px-3 py-2"
+                    className="rounded-full px-4 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
                   >
-                    <User size={18} />
-                    <span>Account</span>
-                    <ChevronDown size={16} />
+                    <User size={18} className="mr-2" />
+                    Account
+                    <ChevronDown size={16} className="ml-2 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 bg-gray-800 border-gray-700 text-white">
+                <DropdownMenuContent className="w-56 bg-black/80 backdrop-blur-md border border-white/10 rounded-xl shadow-xl shadow-black/20 text-white mt-2 p-1">
                   <DropdownMenuGroup>
-                    <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                      <Link to="/signin" className="flex w-full">
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to="/signin" className="flex w-full py-1">
                         Sign In
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-700 cursor-pointer">
-                      <Link to="/signup" className="flex w-full">
+                    <DropdownMenuItem className="rounded-lg hover:bg-white/10 cursor-pointer focus:bg-white/10">
+                      <Link to="/signup" className="flex w-full py-1">
                         Sign Up
                       </Link>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
-                
                 </DropdownMenuContent>
               </DropdownMenu>
+
+              <Button className="ml-2 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-0">
+                <Link to="/signin">Get Started</Link>
+              </Button>
             </>
           )}
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/10">
+                <Menu size={24} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-black/90 backdrop-blur-md border-l border-white/10 text-white p-0">
+              <div className="flex flex-col h-full">
+                <div className="p-6 border-b border-white/10">
+                  <div className="flex items-center gap-3">
+                    <Avatar className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-red-500 to-blue-500 p-0.5">
+                      <div className="absolute inset-0.5 rounded-lg bg-black/50 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                        <AvatarImage src="/logo.png" className="scale-110" />
+                      </div>
+                    </Avatar>
+                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-blue-400">
+                      PicTune
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex-1 overflow-auto py-6 px-4 flex flex-col gap-2">
+                  <Link to="/" className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <Home size={20} />
+                    <span>Home</span>
+                  </Link>
+
+                  {isLoggedIn ? (
+                    <>
+                      <div className="mt-4 mb-2 text-sm font-medium text-gray-400">MUSIC</div>
+                      <Link
+                        to="/songs"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <Music size={20} />
+                        <span>All Music</span>
+                      </Link>
+                      <Link
+                        to="/songs?owner=true"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <span className="ml-8">My Music</span>
+                      </Link>
+                      <Link
+                        to="/songs?owner=true&favorites=true"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <span className="ml-8">Favorites</span>
+                      </Link>
+                      <Link
+                        to="/playlists"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <span className="ml-8">Playlists</span>
+                      </Link>
+                      <Link
+                        to="/upload"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <span className="ml-8">Upload New</span>
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <div className="mt-4 mb-2 text-sm font-medium text-gray-400">ACCOUNT</div>
+                      <Link
+                        to="/signin"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <User size={20} />
+                        <span>Sign In</span>
+                      </Link>
+                      <Link
+                        to="/signup"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors"
+                      >
+                        <span className="ml-8">Sign Up</span>
+                      </Link>
+                    </>
+                  )}
+                </div>
+
+                <div className="p-6 border-t border-white/10">
+                  {isLoggedIn ? (
+                    <Button className="w-full bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 rounded-full">
+                      <Link to="/upload" className="flex items-center justify-center w-full">
+                        Upload
+                      </Link>
+                    </Button>
+                  ) : (
+                    <Button className="w-full bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 rounded-full">
+                      <Link to="/signin" className="flex items-center justify-center w-full">
+                        Get Started
+                      </Link>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>

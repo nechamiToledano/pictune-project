@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 
 [ApiController]
 [Route("api/upload")]
-[Authorize] // Ensure user is authenticated
+//[Authorize] // Ensure user is authenticated
 public class UploadController : ControllerBase
 {
     private readonly IAmazonS3 _s3Client;

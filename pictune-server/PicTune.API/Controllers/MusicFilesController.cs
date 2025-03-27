@@ -24,11 +24,16 @@ namespace PicTune.API.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> GetAllMusicFiles()
+        public async Task<IActionResult> GetAllMusicFiles([FromQuery] bool? owner, [FromQuery] bool? favorites)
         {
-            var files = await _musicFileService.GetAllMusicFilesAsync();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (owner==null)
+                userId = null;
+            var files = await _musicFileService.GetAllMusicFilesAsync(userId, favorites);
             return Ok(files);
         }
+
         [HttpGet("{id}")]
         [Authorize]
         public async Task<IActionResult> GetMusicFileById(int id)
@@ -75,5 +80,14 @@ namespace PicTune.API.Controllers
             string url = _s3Client.GetPreSignedURL(request);
             return Ok(new { url });
         }
+        [HttpPost("{id}/like")]
+        [Authorize]
+        public async Task<IActionResult> ToggleLike(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var success = await _musicFileService.ToggleLikeAsync(id, userId);
+            return success ? Ok(new { message = "Like status updated" }) : NotFound("File not found.");
+        }
+
     }
 }

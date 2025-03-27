@@ -120,13 +120,13 @@ export default function UserProfile({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Profile Card */}
         <Card className="lg:col-span-1 bg-black/40 backdrop-blur-md border-gray-800 text-white overflow-hidden">
-          <div className="h-1 w-full bg-gradient-to-r from-red-600 to-blue-600"></div>
+          <div className="h-1 w-full bg-gradient-to-r from-red-600/20 to-blue-600/20"></div>
           <CardHeader className="relative pb-0">
             <div className="flex flex-col items-center">
               <div className="relative group">
                 <Avatar className="h-24 w-24 border-4 border-black/40 shadow-xl">
                   <AvatarImage src={userImage} alt={userName} />
-                  <AvatarFallback className="bg-gradient-to-r from-red-600 to-blue-600 text-white text-2xl">
+                  <AvatarFallback className="bg-gradient-to-r from-red-600/20 to-blue-600/20 text-white text-2xl">
                     {userInitials}
                   </AvatarFallback>
                 </Avatar>
@@ -212,7 +212,7 @@ export default function UserProfile({
 
         {/* Profile Details */}
         <Card className="lg:col-span-2 bg-black/40 backdrop-blur-md border-gray-800 text-white overflow-hidden">
-          <div className="h-1 w-full bg-gradient-to-r from-red-600 to-blue-600"></div>
+          <div className="h-1 w-full bg-gradient-to-r from-red-600/20 to-blue-600/20"></div>
           <CardHeader>
             <CardTitle>Profile Details</CardTitle>
             <CardDescription className="text-gray-400">
@@ -333,7 +333,7 @@ export default function UserProfile({
                       </Button>
                       <Button
                         onClick={handleSave}
-                        className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white"
+                        className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
                       >
                         <Save className="mr-2 h-4 w-4" />
                         Save Changes
@@ -377,7 +377,7 @@ export default function UserProfile({
                                   src={`/placeholder.svg?height=48&width=48&text=U${item}`}
                                   alt={`User ${item}`}
                                 />
-                                <AvatarFallback className="bg-gradient-to-r from-red-600 to-blue-600 text-white">
+                                <AvatarFallback className="bg-gradient-to-r from-red-600/20 to-blue-600/20 text-white">
                                   U{item}
                                 </AvatarFallback>
                               </Avatar>
@@ -519,7 +519,7 @@ export default function UserProfile({
                 </div>
 
                 <div className="flex justify-center">
-                  <Button className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white">
+                  <Button className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white">
                     <BarChart3 className="mr-2 h-4 w-4" />
                     View Detailed Analytics
                   </Button>
@@ -539,7 +539,7 @@ export default function UserProfile({
               </Button>
               <Button
                 onClick={handleSave}
-                className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white"
+                className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
               >
                 <Save className="mr-2 h-4 w-4" />
                 Save Changes

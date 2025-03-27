@@ -74,7 +74,7 @@ const PricingSection = () => {
               } relative overflow-hidden`}
             >
               {plan.highlighted && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-blue-600 text-white text-xs font-bold py-1 text-center">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600/20 to-blue-600/20 text-white text-xs font-bold py-1 text-center">
                   MOST POPULAR
                 </div>
               )}
@@ -90,7 +90,7 @@ const PricingSection = () => {
                 <ul className="space-y-3">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
-                      <div className="mr-2 h-4 w-4 rounded-full bg-gradient-to-r from-red-600 to-blue-600 flex items-center justify-center">
+                      <div className="mr-2 h-4 w-4 rounded-full bg-gradient-to-r from-red-600/20 to-blue-600/20 flex items-center justify-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -110,7 +110,7 @@ const PricingSection = () => {
                 <Button
                   className={`w-full ${
                     plan.highlighted
-                      ? "bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white"
+                      ? "bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white"
                       : "bg-gray-800 hover:bg-gray-700 text-white"
                   }`}
                 >

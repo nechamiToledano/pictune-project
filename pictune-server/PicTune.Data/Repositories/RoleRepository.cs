@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PicTune.Core.IRepositories;
 using PicTune.Core.Models;
-using PicTune.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

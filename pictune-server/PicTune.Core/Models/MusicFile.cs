@@ -12,5 +12,6 @@
         public bool IsDeleted { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UploadedAt { get; set; } = DateTime.UtcNow;
+        public bool IsLiked { get; set; }
     }
 }

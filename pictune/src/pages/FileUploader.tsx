@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Music, Upload, Headphones, AudioWaveform, ChevronLeft } from 'lucide-react';
+import { Music, Upload,  ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import FileDropzone from '@/components/FileDropzone';
@@ -8,6 +8,7 @@ import ProgressBar from '@/components/ProgressBar';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import {  getPresignedUrl, saveFileMetadata, uploadFileToS3 } from '@/services/uploadService';
+import Background from './Background';
 export default function FileUploaderPage() {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState(0);
@@ -33,13 +34,12 @@ export default function FileUploaderPage() {
     try {
       // Step 1: Request a presigned URL from the backend
       const { url, key } = await getPresignedUrl(file.name);
-      console.log(key + 'key');
 
       // Step 2: Upload the file directly to S3
       await uploadFileToS3(url,file,setProgress)
 
       // Step 3: Save file metadata in the backend
-      await saveFileMetadata(file.name, url);
+      await saveFileMetadata(file.name,file.type,file.size,key);
 
       setProgress(100);
       setUploadComplete(true);
@@ -61,39 +61,8 @@ export default function FileUploaderPage() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black/70 z-10"></div>
-        <img
-          src="/bg.png" // Replace with your actual image path
-          alt="Background"
-          className="w-full h-full object-cover brightness-110 contrast-125 shadow-2xl backdrop-brightness-125"
-        />
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.2, scale: 1 }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: 'reverse' }}
-          className="absolute top-10 left-10 w-64 h-64 rounded-full bg-red-400 opacity-20 blur-3xl"
-        ></motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.2, scale: 1 }}
-          transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY, repeatType: 'reverse', delay: 0.5 }}
-          className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-blue-400 opacity-20 blur-3xl"
-        ></motion.div>
-
-        {/* Music notes decoration */}
-        <div className="absolute top-20 right-20 text-red-300 opacity-20">
-          <Headphones size={60} />
-        </div>
-        <div className="absolute bottom-20 left-20 text-blue-300 opacity-20">
-          <AudioWaveform size={60} />
-        </div>
-      </div>
+    
+<Background/>
 
       <div className="container mx-auto px-4 z-10 pt-10 pb-20">
         <div className="flex flex-col items-center justify-center">
@@ -112,7 +81,7 @@ export default function FileUploaderPage() {
             </div>
 
             <Card className="border-none shadow-lg shadow-black/50 bg-black/40 backdrop-blur-md text-white overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-red-600 to-blue-600"></div>
+              <div className="h-1 w-full bg-gradient-to-r from-red-600/20 to-blue-600/20"></div>
               <CardContent className="p-6 space-y-6">
                 <FileDropzone onFileSelect={handleFileSelect} selectedFile={file} />
 
@@ -135,7 +104,7 @@ export default function FileUploaderPage() {
                   className={`w-full transition-all duration-300 gap-2 font-medium text-white
                     ${
                       !uploading && !uploadComplete && file
-                        ? "bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700"
+                        ? "bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700"
                         : "bg-gray-700"
                     }
                     ${uploadComplete ? "bg-gradient-to-r from-green-600 to-green-500" : ""}

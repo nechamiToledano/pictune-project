@@ -10,3 +10,16 @@ C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-s
 C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Core\obj\Release\net8.0\refint\PicTune.Core.dll
 C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.pdb
 C:\Users\user1\Downloads\pictune-pictune-server\pictune-pictune-server\pictune-server\PicTune.Core\obj\Release\net8.0\ref\PicTune.Core.dll
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\bin\Release\net8.0\PicTune.Core.deps.json
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\bin\Release\net8.0\PicTune.Core.dll
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\bin\Release\net8.0\PicTune.Core.pdb
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.AssemblyInfo.cs
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.sourcelink.json
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.dll
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\refint\PicTune.Core.dll
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\PicTune.Core.pdb
+C:\Users\user1\Desktop\second year studies\pictune\pictune-server\PicTune.Core\obj\Release\net8.0\ref\PicTune.Core.dll

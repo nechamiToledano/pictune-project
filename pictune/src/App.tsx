@@ -9,18 +9,13 @@ import SongsPage from "./pages/AllMusic";
 import SongDetails from "./pages/SongDetails";
 
 import AllMusic from "./pages/AllMusic";
-import MyMusic from "./pages/MyMusic";
 import FileUploader from "./pages/FileUploader";
-
+import MusicLibrary from "./pages/Music-library";
 const Layout: React.FC = () => {
-
-
-
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main 
-      
+      <main
       >
         <Outlet /> {/* Renders child pages */}
       </main>
@@ -42,10 +37,10 @@ const App: React.FC = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/songs" element={<SongsPage />} />
-          <Route path="/songs/:id" element={<SongDetails id={""} />} />       
-          <Route path="/all-music" element={<AllMusic />} />
-          <Route path="/my-music" element={<MyMusic />} />
-          <Route path="/create" element={<FileUploader />} />
+          <Route path="/songs/:id" element={<SongDetails  />} />       
+          <Route path="/songs" element={<AllMusic />} />
+          <Route path="/upload" element={<FileUploader />} />
+          <Route path="/playlists" element={<MusicLibrary />} />
 
 
 

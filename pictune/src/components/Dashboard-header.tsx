@@ -45,7 +45,7 @@ export default function DashboardHeader({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <a href="/dashboard" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-red-600 to-blue-600 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-red-600/20 to-blue-600/20 flex items-center justify-center">
                 <Music className="h-4 w-4 text-white" />
               </div>
               <span className="font-bold text-white text-lg">Pictune</span>

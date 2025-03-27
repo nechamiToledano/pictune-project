@@ -7,15 +7,7 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black/70 z-10"></div>
-        <img
-          src="/bg.png" // Replace with your actual image path
-          alt="Background"
-          className="w-full h-full object-cover brightness-110 contrast-125 shadow-2xl backdrop-brightness-125"
-        />
-      </div>
+ 
 
       <div className="container mx-auto px-4 z-10 pt-10 pb-20">
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -36,7 +28,7 @@ const HeroSection = () => {
                 art and sound in a whole new way.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
+                <Button className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
                   Get Started Free
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>

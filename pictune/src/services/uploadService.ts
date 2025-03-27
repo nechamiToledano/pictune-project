@@ -1,4 +1,5 @@
 import api from "@/components/Api";
+import axios from "axios";
 
 export const getPresignedUrl = async (fileName: string) => {
   
@@ -27,7 +28,7 @@ export const getPresignedUrl = async (fileName: string) => {
 export const uploadFileToS3 = async (uploadUrl: string, file: File, setProgress: React.Dispatch<React.SetStateAction<number>>) => {
   
   try {
-    await api.put(uploadUrl, file, {
+    await axios.put(uploadUrl, file, {
       headers: {
         "Content-Type": file.type,
       },
@@ -43,9 +44,9 @@ export const uploadFileToS3 = async (uploadUrl: string, file: File, setProgress:
 };
 
 // Save file metadata to backend
-export const saveFileMetadata = async (fileName: string, fileUrl: string) => {
+export const saveFileMetadata = async (fileName: string,fileType:string,size:number,s3key:string,folderId:number=0) => {
   try {
-    const response = await api.post("/upload-complete", { fileName, fileUrl });
+    const response = await api.post("/upload/upload-complete", { fileName,fileType,size, s3key,folderId });
     return response.data;
   } catch (error) {
     console.error("Error saving file metadata:", error);

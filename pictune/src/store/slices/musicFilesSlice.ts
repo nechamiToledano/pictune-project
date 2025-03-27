@@ -10,6 +10,7 @@ export interface MusicFile {
   ownerId: string
   s3Key: string
   size: number
+  isLiked: boolean
   createdAt: string
   uploadedAt: string
 }
@@ -17,27 +18,44 @@ export interface MusicFile {
 interface MusicFileState {
   files: MusicFile[]
   selectedFile: MusicFile | null
+  songUrl: string | null
   loading: boolean
   error: string | null
+  lyrics: string | null
+  lyricsError: string | null
+  lyricsLoading: boolean
 }
 
 // Initial state
 const initialState: MusicFileState = {
   files: [],
   selectedFile: null,
+  songUrl: null,
   loading: false,
   error: null,
+  lyrics: null,
+  lyricsError: null,
+  lyricsLoading: false,
 }
 
-// Fetch all music files
-export const fetchMusicFiles = createAsyncThunk("musicFiles/fetchAll", async (_, { rejectWithValue }) => {
-  try {
-    const response = await api.get("/files")
-    return response.data as MusicFile[]
-  } catch (error: any) {
-    return rejectWithValue(error.response?.data?.message || "Failed to fetch music files")
+export const fetchMusicFiles = createAsyncThunk(
+  "musicFiles/fetchAll",
+  async (filters: { owner?: boolean ;favorites?: boolean; } = {}, { rejectWithValue }) => {
+    try {
+      const response = await api.get("/files", {
+        params: {
+          owner: filters.owner || undefined,
+          favorites: filters.favorites || undefined,
+
+        },
+      })
+      return response.data as MusicFile[]
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || "Failed to fetch music files")
+    }
   }
-})
+)
+
 
 // Fetch a single music file
 export const fetchMusicFileById = createAsyncThunk("musicFiles/fetchById", async (id: number, { rejectWithValue }) => {
@@ -49,34 +67,51 @@ export const fetchMusicFileById = createAsyncThunk("musicFiles/fetchById", async
   }
 })
 
-// Update a music file
-export const updateMusicFile = createAsyncThunk(
-  "musicFiles/update",
-  async ({ id, fileName }: { id: number; fileName: string }, { rejectWithValue }) => {
+// Fetch the pre-signed S3 URL
+export const fetchMusicFileUrl = createAsyncThunk("musicFiles/fetchUrl", async (id: number, { rejectWithValue }) => {
+  try {
+    const response = await api.get(`/files/${id}/play`)
+    return response.data.url as string
+  } catch (error: any) {
+    return rejectWithValue(error.response?.data?.message || "Failed to fetch song URL")
+  }
+})
+export const toggleLikeMusicFile = createAsyncThunk<
+  number, // Return type of the action (id)
+  number, // Argument type of the action (id)
+  { rejectValue: string } // Custom error handling
+>(
+  "musicFiles/toggleLike",
+  async (id, { rejectWithValue }) => {
     try {
-      await api.put(`/files/${id}`, { fileName })
-      return { id, fileName }
+      await api.post(`/files/${id}/like`);
+      return id; // Returning the ID after liking the music
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || "Failed to update file")
+      return rejectWithValue(
+        error.response?.data?.message || "Failed to toggle like status"
+      );
+    }
+  }
+);
+export const fetchSongLyrics = createAsyncThunk(
+  "musicFiles/fetchLyrics",
+  async (songId: number, { rejectWithValue }) => {
+    try {
+      const response = await api.get(`/files/${songId}/lyrics`) // API endpoint
+      return response.data.lyrics
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || "Failed to fetch lyrics")
     }
   }
 )
-
-// Delete a music file
-export const deleteMusicFile = createAsyncThunk("musicFiles/delete", async (id: number, { rejectWithValue }) => {
-  try {
-    await api.delete(`/files/${id}`)
-    return id
-  } catch (error: any) {
-    return rejectWithValue(error.response?.data?.message || "Failed to delete file")
-  }
-})
-
-// Music Files Slice
 const musicFilesSlice = createSlice({
   name: "musicFiles",
   initialState,
-  reducers: {},
+  reducers: {
+    clearSongUrl: (state) => {
+      state.songUrl = null
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMusicFiles.pending, (state) => {
@@ -96,15 +131,38 @@ const musicFilesSlice = createSlice({
         state.selectedFile = action.payload
       })
 
-      .addCase(updateMusicFile.fulfilled, (state, action) => {
-        const file = state.files.find((f) => f.id === action.payload.id)
-        if (file) file.fileName = action.payload.fileName
+      .addCase(fetchMusicFileUrl.fulfilled, (state, action: PayloadAction<string>) => {
+        state.songUrl = action.payload
       })
+  
+      .addCase(toggleLikeMusicFile.fulfilled, (state, action) => {
+        if (state.selectedFile && state.selectedFile.id === action.payload) {
+          state.selectedFile.isLiked = !state.selectedFile.isLiked
+        }
 
-      .addCase(deleteMusicFile.fulfilled, (state, action) => {
-        state.files = state.files.filter((file) => file.id !== action.payload)
+        // Update the file in the list
+        const file = state.files.find((f) => f.id === action.payload)
+        if (file) file.isLiked = !file.isLiked
+      })
+      .addCase(toggleLikeMusicFile.rejected, (state, action) => {
+        // Handle rejected action if needed
+        state.error = action.payload as string;
+      })
+      .addCase(fetchSongLyrics.pending, (state) => {
+        state.lyricsLoading = true
+        state.lyricsError = null
+      })
+      .addCase(fetchSongLyrics.fulfilled, (state, action) => {
+        state.lyricsLoading = false
+        state.lyrics = action.payload
+      })
+      .addCase(fetchSongLyrics.rejected, (state, action) => {
+        state.lyricsLoading = false
+        state.lyricsError = action.payload as string
       })
   },
 })
 
+
+export const { clearSongUrl } = musicFilesSlice.actions
 export default musicFilesSlice.reducer

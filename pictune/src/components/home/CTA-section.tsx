@@ -10,7 +10,7 @@ const CTASection = () => {
                     Join thousands of creators who are already using Pictune to add a new dimension to their visual art.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button className="bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
+                    <Button className="bg-gradient-to-r from-red-600/20 to-blue-600/20 hover:from-red-700 hover:to-blue-700 text-white border-0 h-12 px-8 text-lg">
                         Get Started Free
                     </Button>
                     <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800 h-12 px-8 text-lg">

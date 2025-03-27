@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PicTune.Core.IRepositories;
 using PicTune.Core.Models;
-using PicTune.Core.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PicTune.Data.Repositories
@@ -18,14 +16,26 @@ namespace PicTune.Data.Repositories
             _context = context;
         }
 
-        public async Task<MusicFile> GetByIdAsync(int id)
+        public async Task<MusicFile?> GetByIdAsync(int id)
         {
             return await _context.MusicFiles.FindAsync(id);
         }
 
-        public async Task<IEnumerable<MusicFile>> GetAllAsync()
+        public async Task<IEnumerable<MusicFile>> GetAllMusicFilesAsync(string? userId, bool? favorites)
         {
-            return await _context.MusicFiles.ToListAsync();
+            var query = _context.MusicFiles.AsQueryable();
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                query = query.Where(m => m.OwnerId == userId);
+            }
+
+            if (favorites == true)
+            {
+                query = query.Where(m => m.IsLiked);
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task AddAsync(MusicFile musicFile)
@@ -50,5 +60,4 @@ namespace PicTune.Data.Repositories
             }
         }
     }
-
 }

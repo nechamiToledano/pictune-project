@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using PicTune.Core.Models;
 
-namespace PicTune.Service
+namespace PicTune.Core.IServices
 {
     public interface IRoleService
     {

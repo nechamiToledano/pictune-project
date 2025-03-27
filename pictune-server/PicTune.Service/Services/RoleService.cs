@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using PicTune.Core.IServices;
 using PicTune.Core.Models;
 
 namespace PicTune.Service
